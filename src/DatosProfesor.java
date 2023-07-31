@@ -13,7 +13,7 @@ public class DatosProfesor {
             datosPersonalesProfesor = new DatosPersonalesProfesor();
 
             // Solicitar los datos del profesor
-            solicitarDatosProfesor(datosPersonalesProfesor);
+            solicitarDatosProfesor(datosPersonalesProfesor, scanner);
             datosProfesores.add(datosPersonalesProfesor);
 
             // Preguntar si desea ingresar otro profesor
@@ -24,11 +24,12 @@ public class DatosProfesor {
         // Finalmente, imprimir todos los profesores
         imprimirDatosProfesores(datosProfesores);
 
+        // Cerrar el scanner
+        scanner.close();
     }
 
     // Solicitar cedula, edad, nombres, apellidos, materia a dictar, horario
-    static void solicitarDatosProfesor(DatosPersonalesProfesor datosPersonalesProfesor) {
-        Scanner scanner = new Scanner(System.in);
+    static void solicitarDatosProfesor(DatosPersonalesProfesor datosPersonalesProfesor, Scanner scanner) {
         String cedula, edad, nombres, apellidos, materia, horario;
 
         // Solicitar cedula
